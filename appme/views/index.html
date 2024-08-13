@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Automation</title>
+</head>
+<body>
+    <h1>Web Automation</h1>
+    <button id="runAutomation">Run Automation</button>
+
+    <script>
+        document.getElementById('runAutomation').addEventListener('click', function() {
+            fetch('/run-automation', {
+                method: 'POST',
+            })
+            .then(response => response.text())
+            .then(data => alert(data))
+            .catch(error => alert('Error: ' + error));
+        });
+    </script>
+</body>
+</html>
